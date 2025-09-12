@@ -7,9 +7,7 @@ class Solution(object):
                 count+=1
         if count==0:
             return False
-        if count%2!=0:
-            return True
-        if count%2==0:
+        if count >= 1:
             return True
         # return count
         
