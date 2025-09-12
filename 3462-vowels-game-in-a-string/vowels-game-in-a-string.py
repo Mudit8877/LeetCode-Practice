@@ -4,10 +4,6 @@ class Solution(object):
         count=0
         for ch in s:
             if ch in vowels:
-                count+=1
-        if count==0:
-            return False
-        if count >= 1:
-            return True
-        # return count
+                return True
+        return False
         
