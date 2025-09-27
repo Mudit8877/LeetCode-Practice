@@ -1,8 +1,17 @@
-class Solution:
-    def canJump(self, nums: List[int]) -> bool:
-        n=len(nums)
-        goal=n-1
-        for i in range(n-2,-1,-1):
-            if i+nums[i]>=goal:
-                goal=i
-        return goal == 0
+class Solution(object):
+    def canJump(self, nums):
+        if len(nums) == 1:
+            return True
+        jumps=0
+        endindex=0
+        maxindex=0
+        for i in range (len(nums)):
+            maxindex=max(maxindex,i+nums[i])
+            if endindex == i:
+                endindex=maxindex
+                jumps+=1
+
+        if endindex < len(nums)-1:
+            return False
+        if endindex >= len(nums)-1:
+            return True
